@@ -171,10 +171,10 @@
         <div class="library-layout">
             <aside class="bookshelf bookshelf-left" aria-label="Featured books on the left">
                 <div class="shelf">
-                    <a class="book book-1" href="https://www.barnesandnoble.com/w/pride-and-prejudice-jane-austen/1002057084?ean=9781454964810" target="_blank" rel="noopener noreferrer" aria-label="Open Pride and Prejudice">Pride &amp; Prejudice</a>
-                    <a class="book book-2" href="https://www.barnesandnoble.com/w/little-women-louisa-may-alcott/1116668150?ean=9780140390698" target="_blank" rel="noopener noreferrer" aria-label="Open Little Women">Little Women</a>
-                    <a class="book book-3" href="https://www.barnesandnoble.com/w/the-host-with-bonus-chapter-stephenie-meyer/1106917775?ean=9780316068055" target="_blank" rel="noopener noreferrer" aria-label="Open The Host">The Host</a>
-                    <a class="book book-4" href="https://www.barnesandnoble.com/w/jane-eyre-charlotte-bronte/1003646772?ean=9780141441146" target="_blank" rel="noopener noreferrer" aria-label="Open Jane Eyre">Jane Eyre</a>
+                    <a class="book book-1" data-book-id="pride-and-prejudice" href="https://www.barnesandnoble.com/w/pride-and-prejudice-jane-austen/1002057084?ean=9781454964810" target="_blank" rel="noopener noreferrer" aria-label="Open Pride and Prejudice">Pride &amp; Prejudice</a>
+                    <a class="book book-2" data-book-id="little-women" href="https://www.barnesandnoble.com/w/little-women-louisa-may-alcott/1116668150?ean=9780140390698" target="_blank" rel="noopener noreferrer" aria-label="Open Little Women">Little Women</a>
+                    <a class="book book-3" data-book-id="the-host" href="https://www.barnesandnoble.com/w/the-host-with-bonus-chapter-stephenie-meyer/1106917775?ean=9780316068055" target="_blank" rel="noopener noreferrer" aria-label="Open The Host">The Host</a>
+                    <a class="book book-4" data-book-id="jane-eyre" href="https://www.barnesandnoble.com/w/jane-eyre-charlotte-bronte/1003646772?ean=9780141441146" target="_blank" rel="noopener noreferrer" aria-label="Open Jane Eyre">Jane Eyre</a>
                 </div>
                 <div class="shelf">
                     <a class="book book-5" href="https://www.barnesandnoble.com/w/harry-potter-and-the-sorcerers-stone-j-k-rowling/1133614639?ean=9781338299144" target="_blank" rel="noopener noreferrer" aria-label="Open Harry Potter">Harry Potter</a>
@@ -184,9 +184,9 @@
                 </div>
                 <div class="shelf">
                     <a class="book book-9" href="https://www.barnesandnoble.com/w/emma-jane-austen/1116612326?ean=9780141439587" target="_blank" rel="noopener noreferrer" aria-label="Open Emma">Emma</a>
-                    <a class="book book-10" href="https://www.barnesandnoble.com/w/edenbrooke-and-heir-to-edenbrooke-collectors-edition-julianne-donaldson/1125877311?ean=9781629723310" target="_blank" rel="noopener noreferrer" aria-label="Open Edenbrooke">Edenbrooke</a>
+                    <a class="book book-10" data-book-id="edenbrooke" href="https://www.barnesandnoble.com/w/edenbrooke-and-heir-to-edenbrooke-collectors-edition-julianne-donaldson/1125877311?ean=9781629723310" target="_blank" rel="noopener noreferrer" aria-label="Open Edenbrooke">Edenbrooke</a>
                     <a class="book book-11" href="https://www.barnesandnoble.com/w/once-upon-a-broken-heart-stephanie-garber/1138454250?ean=9781250268402" target="_blank" rel="noopener noreferrer" aria-label="Open Once Upon a Broken Heart">Broken Heart</a>
-                    <a class="book book-12" href="https://www.barnesandnoble.com/w/anne-of-green-gables-l-m-montgomery/1116649144?ean=9781454945628" target="_blank" rel="noopener noreferrer" aria-label="Open Anne of Green Gables">Anne Green Gables</a>
+                    <a class="book book-12" data-book-id="anne-of-green-gables" href="https://www.barnesandnoble.com/w/anne-of-green-gables-l-m-montgomery/1116649144?ean=9781454945628" target="_blank" rel="noopener noreferrer" aria-label="Open Anne of Green Gables">Anne Green Gables</a>
                 </div>
             </aside>
 
@@ -236,6 +236,23 @@
                     </div>
                 </section>
 
+                <section class="writing-card favorite-books-card">
+                    <h3>My Top 10 Favorite Books</h3>
+                    <p class="favorite-books-intro">A small shelf of the stories I return to most.</p>
+                    <ol class="favorite-books-list">
+                        <li class="favorite-book-item" data-book-target="jane-eyre" tabindex="0" role="button" aria-pressed="false">Jane Eyre</li>
+                        <li class="favorite-book-item" data-book-target="little-women" tabindex="0" role="button" aria-pressed="false">Little Women</li>
+                        <li class="favorite-book-item" data-book-target="pride-and-prejudice" tabindex="0" role="button" aria-pressed="false">Pride and Prejudice</li>
+                        <li class="favorite-book-item" data-book-target="edenbrooke" tabindex="0" role="button" aria-pressed="false">Edenbrooke</li>
+                        <li class="favorite-book-item" data-book-target="lakeshire-park" tabindex="0" role="button" aria-pressed="false">Lakeshire Park</li>
+                        <li class="favorite-book-item" data-book-target="the-host" tabindex="0" role="button" aria-pressed="false">The Host</li>
+                        <li class="favorite-book-item" data-book-target="anne-of-green-gables" tabindex="0" role="button" aria-pressed="false">Anne of Green Gables</li>
+                        <li class="favorite-book-item" data-book-target="picking-daisies-on-sundays" tabindex="0" role="button" aria-pressed="false">Picking Daisies on Sundays</li>
+                        <li class="favorite-book-item" data-book-target="the-guernsey-literary-and-potato-peel-pie-society" tabindex="0" role="button" aria-pressed="false">The Guernsey Literary and Potato Peel Pie Society</li>
+                        <li class="favorite-book-item" data-book-target="cinder" tabindex="0" role="button" aria-pressed="false">Cinder</li>
+                    </ol>
+                </section>
+
                 <section class="writing-card video-card">
                     <div class="video-card-header">
                         <h2>Why Read?</h2>
@@ -269,21 +286,21 @@
 
             <aside class="bookshelf bookshelf-right" aria-label="Featured books on the right">
                 <div class="shelf">
-                    <a class="book book-13" href="https://www.barnesandnoble.com/w/cinder-marissa-meyer/1100649238?ean=9781250768889" target="_blank" rel="noopener noreferrer" aria-label="Open Cinder">Cinder</a>
+                    <a class="book book-13" data-book-id="cinder" href="https://www.barnesandnoble.com/w/cinder-marissa-meyer/1100649238?ean=9781250768889" target="_blank" rel="noopener noreferrer" aria-label="Open Cinder">Cinder</a>
                     <a class="book book-14" href="https://www.barnesandnoble.com/w/the-lightning-thief-rick-riordan/1100190320?ean=9781368051477" target="_blank" rel="noopener noreferrer" aria-label="Open Percy Jackson">Percy Jackson</a>
                     <a class="book book-15" href="https://www.barnesandnoble.com/w/twilight-stephenie-meyer/1147007259?ean=9780316592987" target="_blank" rel="noopener noreferrer" aria-label="Open Twilight">Twilight</a>
                     <a class="book book-16" href="https://www.barnesandnoble.com/w/love-gelato-jenna-evans-welch/1122088370?ean=9781481432559" target="_blank" rel="noopener noreferrer" aria-label="Open Love and Gelato">Love &amp; Gelato</a>
                 </div>
                 <div class="shelf">
-                    <a class="book book-17" href="https://www.barnesandnoble.com/w/lakeshire-park-megan-walker/1132628786?ean=9781629727349" target="_blank" rel="noopener noreferrer" aria-label="Open Lakeshire Park">Lakeshire Park</a>
+                    <a class="book book-17" data-book-id="lakeshire-park" href="https://www.barnesandnoble.com/w/lakeshire-park-megan-walker/1132628786?ean=9781629727349" target="_blank" rel="noopener noreferrer" aria-label="Open Lakeshire Park">Lakeshire Park</a>
                     <a class="book book-18" href="https://www.barnesandnoble.com/w/the-nightingale-kristin-hannah/1119169484?ean=9781250080400" target="_blank" rel="noopener noreferrer" aria-label="Open The Nightingale">Nightingale</a>
                     <a class="book book-19" href="https://www.barnesandnoble.com/w/elantris-brandon-sanderson/1100356144?ean=9780765350374" target="_blank" rel="noopener noreferrer" aria-label="Open Elantris">Elantris</a>
-                    <a class="book book-20" href="https://www.barnesandnoble.com/w/picking-daisies-on-sundays-liana-cincotti/1145469024?ean=9781538779262" target="_blank" rel="noopener noreferrer" aria-label="Open Picking Daisies on Sundays">Picking Daisies</a>
+                    <a class="book book-20" data-book-id="picking-daisies-on-sundays" href="https://www.barnesandnoble.com/w/picking-daisies-on-sundays-liana-cincotti/1145469024?ean=9781538779262" target="_blank" rel="noopener noreferrer" aria-label="Open Picking Daisies on Sundays">Picking Daisies</a>
                 </div>
                 <div class="shelf">
                     <a class="book book-21" href="https://www.barnesandnoble.com/w/the-hunger-games-suzanne-collins/1100171585?ean=9780439023528" target="_blank" rel="noopener noreferrer" aria-label="Open Hunger Games">Hunger Games</a>
                     <a class="book book-22" href="https://www.barnesandnoble.com/w/to-kill-a-mockingbird-harper-lee/1100151011?ean=9780060935467" target="_blank" rel="noopener noreferrer" aria-label="Open To Kill a Mockingbird">Mockingbird</a>
-                    <a class="book book-23" href="https://www.barnesandnoble.com/w/the-guernsey-literary-and-potato-peel-pie-society-mary-ann-shaffer/1100259926?ean=9780440337973" target="_blank" rel="noopener noreferrer" aria-label="Open The Guernsey Literary and Potato Peel Pie Society">Guernsey Literary</a>
+                    <a class="book book-23" data-book-id="the-guernsey-literary-and-potato-peel-pie-society" href="https://www.barnesandnoble.com/w/the-guernsey-literary-and-potato-peel-pie-society-mary-ann-shaffer/1100259926?ean=9780440337973" target="_blank" rel="noopener noreferrer" aria-label="Open The Guernsey Literary and Potato Peel Pie Society">Guernsey Literary</a>
                     <a class="book book-24" href="https://www.barnesandnoble.com/w/the-selection-kiera-cass/1106580335?ean=9780062059949" target="_blank" rel="noopener noreferrer" aria-label="Open The Selection">The Selection</a>
                 </div>
             </aside>
