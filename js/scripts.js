@@ -31,3 +31,116 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+    const favoriteBookItems = document.querySelectorAll('.favorite-book-item[data-book-target]');
+    const shelfBooks = document.querySelectorAll('.book[data-book-id]');
+
+    if (!favoriteBookItems.length || !shelfBooks.length) {
+        return;
+    }
+
+    let selectedItem = null;
+    let previewItem = null;
+
+    const clearListSelection = () => {
+        favoriteBookItems.forEach((item) => {
+            item.classList.remove('is-selected');
+            item.setAttribute('aria-pressed', 'false');
+        });
+    };
+
+    const clearShelfHighlights = () => {
+        shelfBooks.forEach((book) => {
+            book.classList.remove('is-linked-highlight');
+            book.classList.remove('is-selected-book');
+        });
+    };
+
+    const getMatchedBook = (item) => {
+        const targetId = item?.dataset.bookTarget;
+        return document.querySelector(`.book[data-book-id="${targetId}"]`);
+    };
+
+    const syncBookHighlights = ({ scrollToMatch = false } = {}) => {
+        clearShelfHighlights();
+
+        if (selectedItem) {
+            selectedItem.classList.add('is-selected');
+            selectedItem.setAttribute('aria-pressed', 'true');
+        }
+
+        const selectedBook = selectedItem ? getMatchedBook(selectedItem) : null;
+        const previewBookMatch = previewItem ? getMatchedBook(previewItem) : null;
+
+        if (selectedBook) {
+            selectedBook.classList.add('is-selected-book');
+        }
+
+        if (!previewBookMatch) {
+            return;
+        }
+
+        if (previewBookMatch !== selectedBook) {
+            previewBookMatch.classList.add('is-linked-highlight');
+        }
+
+        if (scrollToMatch) {
+            (selectedBook || previewBookMatch).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
+    };
+
+    const selectBook = (item) => {
+        if (selectedItem === item) {
+            selectedItem = null;
+            clearListSelection();
+            syncBookHighlights();
+            return;
+        }
+
+        selectedItem = item;
+        clearListSelection();
+        syncBookHighlights({ scrollToMatch: true });
+    };
+
+    const previewBook = (item) => {
+        previewItem = item;
+        syncBookHighlights();
+    };
+
+    const clearPreview = (item) => {
+        if (previewItem === item) {
+            previewItem = null;
+            syncBookHighlights();
+        }
+    };
+
+    favoriteBookItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            selectBook(item);
+        });
+
+        item.addEventListener('mouseenter', () => {
+            previewBook(item);
+        });
+
+        item.addEventListener('mouseleave', () => {
+            clearPreview(item);
+        });
+
+        item.addEventListener('focus', () => {
+            previewBook(item);
+        });
+
+        item.addEventListener('blur', () => {
+            clearPreview(item);
+        });
+
+        item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectBook(item);
+            }
+        });
+    });
+});
