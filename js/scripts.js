@@ -3,7 +3,7 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
 */
-window.addEventListener('DOMContentLoaded', () => {
+const initMainNav = () => {
     const mainNav = document.getElementById('mainNav');
     if (!mainNav) {
         return;
@@ -30,9 +30,9 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         scrollPos = currentTop;
     });
-});
+};
 
-window.addEventListener('DOMContentLoaded', () => {
+const initFavoriteBooks = () => {
     const favoriteBookItems = document.querySelectorAll('.favorite-book-item[data-book-target]');
     const shelfBooks = document.querySelectorAll('.book[data-book-id]');
 
@@ -46,6 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const clearListSelection = () => {
         favoriteBookItems.forEach((item) => {
             item.classList.remove('is-selected');
+            item.classList.remove('is-previewed');
             item.setAttribute('aria-pressed', 'false');
         });
     };
@@ -68,6 +69,10 @@ window.addEventListener('DOMContentLoaded', () => {
         if (selectedItem) {
             selectedItem.classList.add('is-selected');
             selectedItem.setAttribute('aria-pressed', 'true');
+        }
+
+        if (previewItem && previewItem !== selectedItem) {
+            previewItem.classList.add('is-previewed');
         }
 
         const selectedBook = selectedItem ? getMatchedBook(selectedItem) : null;
@@ -143,4 +148,14 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+};
+
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', () => {
+        initMainNav();
+        initFavoriteBooks();
+    });
+} else {
+    initMainNav();
+    initFavoriteBooks();
+}
