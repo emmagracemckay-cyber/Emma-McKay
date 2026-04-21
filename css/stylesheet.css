@@ -374,11 +374,13 @@ a {
     color: var(--ink);
     font-size: 0.95rem;
     line-height: 1.35;
+    cursor: pointer;
     box-shadow: 0 12px 26px rgba(53, 39, 29, 0.08);
     transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.favorite-books-list li:hover {
+.favorite-books-list li:hover,
+.favorite-books-list li.is-previewed {
     transform: translateY(-2px);
     border-color: rgba(184, 138, 59, 0.45);
     background: linear-gradient(135deg, rgba(184, 138, 59, 0.18), rgba(255, 255, 255, 0.92));
@@ -391,7 +393,8 @@ a {
     box-shadow: 0 16px 30px rgba(22, 52, 34, 0.16);
 }
 
-.favorite-books-list li:hover::before {
+.favorite-books-list li:hover::before,
+.favorite-books-list li.is-previewed::before {
     background: linear-gradient(135deg, var(--gold), #d4a689);
     color: var(--wood-dark);
 }
